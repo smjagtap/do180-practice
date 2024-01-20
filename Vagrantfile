@@ -5,7 +5,7 @@ Vagrant.configure("2") do |config|
     # Image Registry
   config.vm.define "registry" do |registry|
     registry.vm.box = "almalinux/8"
-    registry.vm.hostname = "registry.do180.lab"
+    registry.vm.hostname = "registry.do188.lab"
     registry.vm.network :private_network, ip: "192.168.88.5"
     registry.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".git/"
 
@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
   # Workstation
   config.vm.define "workstation" do |workstation|
     workstation.vm.box = "almalinux/8"
-    workstation.vm.hostname = "workstation.do180.lab"
+    workstation.vm.hostname = "workstation.do188.lab"
     workstation.vm.network :private_network, ip: "192.168.88.4"
     workstation.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".git/"
 
